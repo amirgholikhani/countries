@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <button v-on:click="increment">onClick</button>
-    <span>{{ count }}</span>
+    <button class="bg-green-400 p-4" v-on:click="increment">onClick</button>
+    <span class="text-red-400 m-5">{{ count }}</span>
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
   </div>
 </template>
