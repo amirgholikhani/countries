@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home bg-white dark:bg-gray-900">
     <div v-show="loading">
       <font-awesome-icon icon="spinner" spin />
     </div>
@@ -25,7 +25,7 @@ import Country from "@/components/Country.vue";
     Country,
   },
   computed: {
-    ...mapGetters(["count", "resources", "loading"]),
+    ...mapGetters(["resources", "loading"]),
   },
   mounted() {
     this.$store.dispatch("getResources");
@@ -35,8 +35,5 @@ export default class Home extends Vue {
   private count: number = this.$store.state.count;
   private resources: number = this.$store.state.resources;
   private loading: number = this.$store.state.loading;
-  increment(): unknown {
-    return this.$store.dispatch("increment");
-  }
 }
 </script>

@@ -1,8 +1,8 @@
 <template>
-  <div class="about">
+  <div class="about bg-white dark:bg-gray-900">
     <div class="w-full md:w-11/12 mb-6 text-left mx-6 md:mx-20">
       <router-link
-        class="mx-2 border border-gray-400 rounded p-2 text-sm mb-2 inline-block"
+        class="mx-2 border border-gray-400 rounded p-2 text-sm mb-2 inline-block dark:text-white"
         to="/"
       >
         <font-awesome-icon icon="arrow-left" />
@@ -26,10 +26,10 @@
         </div>
       </div>
       <div class="w-full md:w-6/12 lg:w-7/12 px-8 py-6">
-        <h1 class="text-black font-bold text-2xl px-3 text-left mb-8">
+        <h1 class="text-black dark:text-white font-bold text-2xl px-3 text-left mb-8">
           {{ resource.name }}
         </h1>
-        <div class="flex flex-wrap justify-center text-black">
+        <div class="flex flex-wrap justify-center text-black dark:text-white">
           <div class="w-full sm:w-1/2 md:w-full lg:w-1/2 px-3 text-left text-md mb-6">
             <div class="mb-2">
               <span class="font-bold">Native Name: </span>
@@ -56,7 +56,7 @@
               <span>{{ resource.capital }}</span>
             </div>
           </div>
-          <div class="w-full sm:w-1/2 md:w-full lg:w-1/2 px-3 text-left">
+          <div class="w-full sm:w-1/2 md:w-full lg:w-1/2 px-3 text-left dark:text-white">
             <div class="mb-2">
               <span class="font-bold">Top Level Domain: </span>
               <span>{{ resource.topLevelDomain.join(",") }}</span>
@@ -75,8 +75,8 @@
             </div>
           </div>
         </div>
-        <div class="flex">
-          <span>Border Countries</span>
+        <div class="flex flex-wrap text-black dark:text-white">
+          <span class="mb-3 mx-3">Border Countries: </span>
           <div>
             <router-link
               class="mx-2 border border-gray-400 rounded p-2 text-sm mb-2 inline-block"
@@ -135,4 +135,8 @@ export default class Detail extends Vue {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.about {
+  height: 85vh;
+}
+</style>

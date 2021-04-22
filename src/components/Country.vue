@@ -4,10 +4,10 @@
       <div>
         <img class="w-full" :src="resource.flag" :alt="resource.name" />
       </div>
-      <div class="bg-white p-5 text-left">
-        <h1 class="text-black font-bold mb-4">{{ resource.name }}</h1>
+      <div class="bg-white dark:bg-gray-800 p-5 text-left">
+        <h1 class="text-black dark:text-white font-bold mb-4">{{ resource.name }}</h1>
         <ul>
-          <li class="mb-1 text-black text-sm">
+          <li class="mb-1 text-black dark:text-white text-sm">
             <span class="font-bold">Population: </span
             >{{
               resource.population
@@ -15,10 +15,10 @@
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
             }}
           </li>
-          <li class="mb-1 text-black text-sm">
+          <li class="mb-1 text-black dark:text-white text-sm">
             <span class="font-bold">Region: </span>{{ resource.region }}
           </li>
-          <li class="mb-1 text-black text-sm">
+          <li class="mb-1 text-black dark:text-white text-sm">
             <span class="font-bold">Capital: </span>{{ resource.capital }}
           </li>
         </ul>
