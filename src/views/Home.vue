@@ -1,15 +1,15 @@
 <template>
-  <div class="home">
-    <button class="bg-green-400 p-4" v-on:click="increment">onClick</button>
-    <span class="text-red-400 m-5">{{ count }}</span>
-    <p v-show="loading">Loading ...</p>
-    <div class="flex flex-wrap items-center justify-center">
+  <div class="home bg-white dark:bg-gray-900">
+    <div v-show="loading">
+      <font-awesome-icon icon="spinner" spin />
+    </div>
+    <div class="w-10/12 mx-auto flex flex-wrap justify-center">
       <div
         v-for="(resource, index) in resources"
-        class="w-12/12 md:w-3/12 p-5"
+        class="w-full md:w-1/2 lg:w-4/12 xl:w-3/12 px-6 mb-5"
         v-bind:key="index"
       >
-        <HelloWorld :resource="resource" />
+        <Country :resource="resource" />
       </div>
     </div>
   </div>
@@ -18,14 +18,14 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { mapGetters } from "vuex";
-import HelloWorld from "@/components/HelloWorld.vue";
+import Country from "@/components/Country.vue";
 
 @Component({
   components: {
-    HelloWorld,
+    Country,
   },
   computed: {
-    ...mapGetters(["count", "resources", "loading"]),
+    ...mapGetters(["resources", "loading"]),
   },
   mounted() {
     this.$store.dispatch("getResources");
@@ -35,8 +35,5 @@ export default class Home extends Vue {
   private count: number = this.$store.state.count;
   private resources: number = this.$store.state.resources;
   private loading: number = this.$store.state.loading;
-  increment(): unknown {
-    return this.$store.dispatch("increment");
-  }
 }
 </script>

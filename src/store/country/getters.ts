@@ -5,6 +5,9 @@ export default {
   resources: (state: any) => {
     return state.resources;
   },
+  resource: (state: any) => {
+    return state.resource;
+  },
   loading: (state: any) => {
     return state.loading;
   },
